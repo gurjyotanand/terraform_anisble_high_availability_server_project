@@ -28,7 +28,7 @@ resource "aws_subnet" "public_2" {
 }
 
 resource "aws_lb" "pj1_web_alb" {
-  name = "pj1_web-alb"
+  name = "pj1-web-alb"
   internal = false
   load_balancer_type = "application"
   subnets = [ aws_subnet.public_1.id, aws_subnet.public_2.id ]
