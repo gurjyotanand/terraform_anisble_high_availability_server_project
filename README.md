@@ -37,19 +37,17 @@ This project uses **Terraform** and **Ansible** to deploy a highly available and
 
 ```mermaid
 graph TD
-  A[User Request from Browser] --> B[Application Load Balancer (ALB)]
-  B --> C1[EC2 Instance in Subnet 1 (AZ1)]
-  B --> C2[EC2 Instance in Subnet 2 (AZ2)]
-  C1 --> D1[Nginx Web Server]
-  C2 --> D2[Nginx Web Server]
-  subgraph Auto Scaling Group
+  A["User Request from Browser"] --> B["Application Load Balancer (ALB)"]
+  B --> C1["EC2 Instance in Subnet 1 (AZ1)"]
+  B --> C2["EC2 Instance in Subnet 2 (AZ2)"]
+  C1 --> D1["Nginx Web Server"]
+  C2 --> D2["Nginx Web Server"]
+  subgraph "Auto Scaling Group"
     C1
     C2
   end
-  C1 & C2 --> E[Ansible (via user_data)]
-  E --> F[GitHub: webserver.yml]
-
-
+  C1 & C2 --> E["Ansible via user_data.sh"]
+  E --> F["GitHub Repo: webserver.yml"]
 ---
 
 ## 📁 Project Structure
