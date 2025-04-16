@@ -1,6 +1,7 @@
 ---
 - name: Configure Nginx Web Server
-  hosts: all
+  hosts: localhost
+  connection: local
   become: true
   tasks:
     - name: install Nginx
