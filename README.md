@@ -48,7 +48,7 @@ graph TD
   end
   C1 & C2 --> E["Ansible via user_data.sh"]
   E --> F["GitHub Repo: webserver.yml"]
----
+```
 
 ## 📁 Project Structure
 
